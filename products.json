@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Cat and Chick Mug",
+        "price": 200,
+        "image": "images/product1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Cat",
+        "price": 200,
+        "image": "images/product2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Dog",
+        "price": 200,
+        "image": "images/product3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Hen",
+        "price": 200,
+        "image": "images/product4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Meow",
+        "price": 200,
+        "image": "images/product5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Woof",
+        "price": 200,
+        "image": "images/product6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Mug7",
+        "price": 150,
+        "image": "images/product7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Dog Paw Sticker",
+        "price": 20,
+        "image": "images/product8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Cat Paw Sticker",
+        "price": 20,
+        "image": "images/product9.jpg"
+    }
+]
