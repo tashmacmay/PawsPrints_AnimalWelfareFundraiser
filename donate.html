@@ -37,7 +37,57 @@
     </header>
 
     <main>
-
+        <section class="page-header">
+            <h1>Make a Donation</h1>
+        </section>
+        <section class="half-grid side-margins">
+            <img src="images/PuppyStack_Center.jpg">
+            <div>
+                <section class="forms-section">
+                    <div class="form-container">
+                        <h2>Make a Once-Off Donation</h2>
+                        <form> <!--Inspired by https://www.sheldrickwildlifetrust.org/donate-->
+                            <table> <!--Form creation - table formatting: https://www.youtube.com/watch?v=wZ1H_oGDcJM-->
+                                <tr>
+                                    <td><label for="donation_amount">Donation (Once-Off) R</label></td> <!--Label attatches to editbox e.g. clicking "Email" activates allocated input editbox-->
+                                    <td><input type="number" id="donation_amount" name="donation_amount" value="" required placeholder="0.00" autofocus></td> <!--No preset information, and it is REQUIRED. Autofocus information found at: https://www.w3schools.com/tags/att_input_autofocus.asp-->
+                                </tr>
+                                <tr>
+                                    <td><label for="email">Email</label></td>
+                                    <td><input type="email" id="email" name="email" value="" required placeholder="john.smith@gmail.com"></td>
+                                </tr>
+                                <tr>
+                                    <td></td> <!--Blank column-->
+                                    <td><button type="submit">Donate</button> <button type="Reset">Reset</button></td> <!--Side-by-side buttons. Reset button functionality learnt from youtube tutorial above ^^^-->
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="form-container">
+                        <h2>Begin Monthly Donations</h2>
+                        <form> <!--Inspired by https://www.sheldrickwildlifetrust.org/donate-->
+                            <table> <!--Form creation - table formatting: https://www.youtube.com/watch?v=wZ1H_oGDcJM-->
+                                <tr>
+                                    <td><label for="donation_amount">Donation (Monthly) R</label></td> <!--Label attatches to editbox e.g. clicking "Email" activates allocated input editbox-->
+                                    <td><input type="number" id="donation_amount" name="donation_amount" value="" required placeholder="0.00" autofocus></td> <!--No preset information, and it is REQUIRED. Autofocus information found at: https://www.w3schools.com/tags/att_input_autofocus.asp-->
+                                </tr>
+                                <tr>
+                                    <td><label for="email">Email</label></td>
+                                    <td><input type="email" id="email" name="email" value="" required placeholder="john.smith@gmail.com"></td>
+                                </tr>
+                                <tr>
+                                    <td></td> <!--Blank column-->
+                                    <td><button type="submit">Donate</button> <button type="Reset">Reset</button></td> <!--Side-by-side buttons. Reset button functionality learnt from youtube tutorial above ^^^-->
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </section>
     </main>
     
+    <footer class="side-padding">
+        Copyright (C) - Paws Prints 2026
+    </footer>
 </body>
