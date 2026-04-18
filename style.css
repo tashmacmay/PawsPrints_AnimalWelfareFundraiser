@@ -1,3 +1,5 @@
+/*Default Page Style & Add-ons*/
+
 body {
     background-color: white;
     color: #894728;
@@ -5,11 +7,11 @@ body {
     margin: 0px; /*Removes margins by default - useful for nav and banner*/
 }
 
-html {
-    margin: 0px;
+h1 {
+    margin: 0;
 }
 
- /*Right and left margins/padding changed only (readidy applied to body sections):*/
+/*Right and left margins/padding changed only (readidy applied to body sections)*/
 .side-margins {
     margin-left: 100px;
     margin-right: 100px;
@@ -19,95 +21,93 @@ html {
     padding-right: 100px;
 }
 
+/*Elements*/
+
 header {
     display: flex;
     flex-direction: row;
     height: 50px;
     padding-top: 10px;
-    padding-bottom: 10px;
-    img {
-        height: 100%; /*Logo fits the header, but not flush with borders*/
-        width: auto;
-        align-self: center; /*Align the logo in the center of the header vertically*/
-    }
-    nav {
-        align-self: center; /*Align the navigation items in the center of the header vertically*/
-        flex-grow: 1;
-        ul {
-            margin: 0px; /*List had own top margin which added blank space above navbar (untouched by body tag's undo margins)*/
-            display: flex;
-            flex-direction: row; /*The nav items are spread horizontally*/
-            justify-content: right; /*keep left for the logo and navigation to the right*/
-            gap: 50px;
-            list-style-type: none; /*Removes list bullets*/
-
-            a {
-                display: block;
-                font-weight: bold;
-                font-size: larger;
-                color: #894728;
-                text-decoration: none;
-                padding: 10px 15px 10px 15px;
-            }
-
-            /*W3Schools Drop down (navbar) tutorial adapted*/
-            .dropdown {
-                display: inline-block;
-            }
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: white;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-            .dropdown-content a {
-                color: #894728;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-            }
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .cart-nav { /*Cart nav element inspired by https://www.youtube.com/watch?v=gXWohFYrI0M*/
-                position: relative;
-                .fa-solid fa-cart-shopping {
-                    color: #894728;
-                }
-                .cart-badge {
-                    width: 20px;
-                    height: 20px;
-                    text-align: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    background-color: #E15E5E;
-                    color: white;
-                    position: absolute;
-                    top: 5px; /*Position the item count badge on the corner of the shopping cart*/
-                    left: 5px;
-                }
-            }
-        }
-    }
+    padding-bottom: 10px;  
 }
-a { /*Remove refault link styling*/
-    text-decoration: none;
+
+nav {
+    align-self: center; /*Align the navigation items in the center of the header vertically*/
+    flex-grow: 1;
 }
-/*Styling types of links*/
-#announcement {
-    height: 50px;
+
+ul {
+    margin: 0px; /*List had own top margin which added blank space above navbar (untouched by body tag's undo margins)*/
     display: flex;
+    flex-direction: row; /*The nav items are spread horizontally*/
+    justify-content: right; /*keep left for the logo and navigation to the right*/
+    gap: 50px;
+    list-style-type: none; /*Removes list bullets*/    
+}
+
+a { /*Navigation Links*/
+    display: block;
+    font-weight: bold;
+    font-size: larger;
+    color: #894728;
+    text-decoration: none;
+    text-decoration: none; /*Remove default link styling*/
     align-items: center; /*Center the text vertically*/
     justify-content: center; /*Center the message horizontally as a standout piece of information*/
     font-weight: bold;
 }
+
+.logo {
+    height: 100%; /*Logo fits the header, but not flush with borders*/
+    width: auto;
+    align-self: center; /*Align the logo in the center of the header vertically*/
+}
+
+/*Cart navigation item inspired by https://www.youtube.com/watch?v=gXWohFYrI0M*/
+.cart-nav { 
+    position: relative; /*Sets the cart icon container as relative so a badge may hover over it*/
+}
+.fa-cart-shopping { /*The icon's class*/
+    color: #894728;
+}
+.cart-badge { /*The cart icon's notification badge*/
+    display: flex;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #E15E5E;
+    color: white;
+    position: absolute;
+    bottom: -2px; /*Position the item count badge on the corner of the shopping cart*/
+    right: -8px;
+    font-size: small;
+}
+
+/*W3Schools Drop down (navbar) tutorial adapted*/
+.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: #894728;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .button{ /*For links of class button to make them appear like buttons aethetically*/
     display: block; /*Learnt that <a> is in-line by default and therefore does not regognise margins, therefore set display to block https://forum.freecodecamp.org/t/why-margin-doesnt-work/346366*/
     margin-top: 20px;
@@ -115,6 +115,78 @@ a { /*Remove refault link styling*/
     border-radius: 25px;
     max-width: fit-content;
 }
+
+/*Page Sections*/
+
+.announcement {
+    height: 50px;
+    display: flex;
+    font-weight: bold;
+}
+
+.banner {
+    position: relative;
+    color: white;
+    
+}
+.banner-img {
+    display: block; /*Image of banner applied spall space beneath it. Block*/
+    width: 100%; /*Banner image specifically spans the entire width of the page*/
+}
+.top-left
+{
+    position: absolute;
+    top: 50px; /*Position the text at the top left of the image container*/
+    left: 100px;
+    max-width: 50%;
+}
+
+.metrics-section {
+    background-color: #ffda90;
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    p {
+        margin: 0px;
+    }
+}
+.metric {
+    font-size: xxx-large;
+    font-weight: bolder;
+}
+
+.about-section {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.about-img {
+    width: 20%;
+    object-fit: cover; /*Height: auto had the tendancy to squish the ratio, so Iimplemented object-fit: cover to ensure the ratio remained at the expense of some width/height. https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_sizing/Aspect_ratios*/
+    border-radius: 25px;        
+}
+
+.page-header
+{
+    background-color: #ffda90; 
+    height: 100px;
+    justify-items: center;
+    align-content: center;
+}
+
+footer {
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Other Colouring (Accents & Hover)*/
 .box-highlight {
     background-color: #E15E5E; 
     color: #ffda90;   
@@ -126,82 +198,3 @@ a { /*Remove refault link styling*/
 .nav-highlight:hover {
     color: #E15E5E;
 }
-
-#banner {
-    position: relative;
-    color: white;
-    img {
-        display: block; /*Image of banner applied spall space beneath it. Block*/
-        width: 100%; /*Banner image specifically spans the entire width of the page*/
-    }
-    .top-left
-    {
-        position: absolute;
-        top: 50px; /*Position the text at the top left of the image container*/
-        left: 100px;
-        max-width: 50%;
-    }
-    h1, p {
-        text-shadow: 1px 1px 100px black;
-    }
-}
-
-#metrics {
-    background-color: #ffda90;
-    min-height: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    article {
-        text-align: center;
-        padding-top: 50px;
-        max-width: 200px;
-        .metric {
-            font-size: xxx-large;
-            font-weight: bolder;
-        }
-        p {
-            margin: 0px; /*Keeps the main metric close to the context description*/
-        }
-    }
-}
-
-.about-section {
-    h1 {
-        margin-top: 0px;
-    }
-    margin-top: 50px; 
-    max-height: 400px;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    img {
-        width: 20%;
-        object-fit: cover; /*Height: auto had the tendancy to squish the ratio, so Iimplemented object-fit: cover to ensure the ratio remained at the expense of some width/height. https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_sizing/Aspect_ratios*/
-        border-radius: 25px;        
-    }
-}
-
-.page-header
-{
-    background-color: #ffda90; 
-    height: 100px;
-    justify-items: center;
-    align-content: center;
-    h1 {
-        margin: 0px;
-        font-size: xxx-large;
-        align-self: center;
-    }
-}
-
-footer {
-    min-height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-/*Overflow scrolling: overflow: scroll;
-        overflow-x: hidden; /*Hid unused horizontal scroll bar: https://refine.dev/blog/css-hide-scrollbar/#:~:text=The%20CSS%20property%20overflow%2Dy,horizontal%20scrollbar%20on%20an%20element.*/
