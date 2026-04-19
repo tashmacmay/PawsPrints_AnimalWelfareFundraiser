@@ -5,6 +5,14 @@ body {
     color: #894728;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0px; /*Removes margins by default - useful for nav and banner*/
+    /*Stickyfooter - flex method (keeps footer stuck to bottom of the page: https://www.youtube.com/watch?v=ffb34dCmMVQ)*/
+    min-height: 100vh; /*Code learnt for my tutorial submissions*/
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1; /*Growth to fill space of body column flex - Ensures the footer is PUSHED*/
 }
 
 h1 {
@@ -22,6 +30,9 @@ h1 {
     padding-right: 15%;
 }
 
+/*Product Grids/Lists:*/
+
+/*Form Pages e.g. Contact*/
 .half-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /*Ensures both grid columns are the same width - learnt at: https://gomakethings.com/an-introduction-to-css-grid/*/
@@ -39,13 +50,13 @@ h1 {
     flex-direction: column;
     gap: 20px;
 }
-
 .form-container {
     background-color: #ffda90;
     padding: 20px;
     border-radius: 25px;
 }
 
+/*Product Page*/
 .product-grid { /*Grid rather than flex so that card widths are adaptive - setup learnt from https://www.w3schools.com/css/css_grid.asp*/
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr; /*Ensures all grid columns are the same width (even rows with less than 4 items) - learnt at: https://gomakethings.com/an-introduction-to-css-grid/*/
@@ -99,9 +110,35 @@ h1 {
     }
 }
 
+/*Cart Page - within cart-tab is inspired by Lun Dev Code's tutorial @ https://www.youtube.com/watch?v=gXWohFYrI0M&t=1611s*/
 .cart-list {
     display: flex;
     flex-direction: column;
+}
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+}
+.item-img img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    padding: 20px;
+    border-radius: 20%;
+}
+.item-quantity span{ /*Styling the quantity buttons*/
+    background-color: #ffcd98;
+    width: 25px;
+    height: 25px;
+    display: inline-block; /*Inline to void stacking on-top of one another*/
+    border-radius: 50%;
+    cursor: pointer;
+    align-content: center;
+}
+.cart-item:nth-child(even){
+    background-color: rgb(234, 192, 115);
 }
 
 /*Elements*/
@@ -191,7 +228,7 @@ a { /*Navigation Links*/
     display: block;
 }
 
-.button{ /*For links of class button to make them appear like buttons aethetically*/
+.button, .checkout, .submit{ /*For links of class button to make them appear like buttons aethetically*/
     display: block; /*Learnt that <a> is in-line by default and therefore does not regognise margins, therefore set display to block https://forum.freecodecamp.org/t/why-margin-doesnt-work/346366*/
     margin-top: 20px;
     padding: 10px;
@@ -276,9 +313,9 @@ footer {
 }
 
 /*Other Colouring (Accents & Hover)*/
-.box-highlight {
+.box-highlight, .button, .checkout, .submit {
     background-color: #E15E5E; 
-    color: #ffda90;   
+    color: #ffda90; 
 }
 .box-highlight:hover {
     background-color: #ffda90;

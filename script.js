@@ -2,7 +2,7 @@
 
 let cart = []; //Empty array to initialise the cart
 let listProducts = [] //Array of website's products for acces from the json file
-let CartHTML = document.querySelector('.listCart');
+let CartHTML = document.querySelector('.cart-list');
 let iconCartBadge = document.querySelector('.cart-badge');
 
 const initApp = () => { //Called when the application starts, therefore product data is immediately stored to the product list array
@@ -52,21 +52,21 @@ const addCartToHTML = () => {
         cart.forEach(cart => {
             totalQuantity = totalQuantity + cart.quantity;
             let newCart = document.createElement('div');
-            newCart.classList.add('item');
+            newCart.classList.add('cart-item');
             newCart.dataset.id = cart.product_id;
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id)
             let info = listProducts[positionProduct];
             newCart.innerHTML = `
-            <div class="image">
+            <div class="item-img">
                 <img src="${info.image}">
             </div>
-            <div class="name">
+            <div class="item-name">
                 ${info.name}
             </div>
-            <div class="totalPrice">
+            <div class="item-total-price">
                 ${info.price * cart.quantity}
             </div>
-            <div class="quantity" data-id="${cart.product_id}">
+            <div class="item-quantity" data-id="${cart.product_id}">
                 <span class="minus"><</span>
                 <span>${cart.quantity}</span>
                 <span class="plus">></span>
