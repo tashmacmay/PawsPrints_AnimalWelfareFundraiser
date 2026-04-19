@@ -3,7 +3,7 @@
 let cart = []; //Empty array to initialise the cart
 let listProducts = [] //Array of website's products for acces from the json file
 let CartHTML = document.querySelector('.listCart');
-let iconCartBadge = document.querySelector('.fa-cart-shopping');
+let iconCartBadge = document.querySelector('.cart-badge');
 
 const initApp = () => { //Called when the application starts, therefore product data is immediately stored to the product list array
     //get the data from the json file
@@ -42,8 +42,12 @@ const addToCart = (product_id) => {
 }
 
 const addCartToHTML = () => {
+    let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    iconCartBadge.innerText = totalQuantity; //Reliably updates cart badge every time Add to Cart is clicked
+    if(!CartHTML) return; //The method will end here in the event that the cart page's container does not exist
+
     CartHTML.innerHTML = '';
-    let totalQuantity = 0;
+    //let totalQuantity = 0;
     if(cart.length > 0){
         cart.forEach(cart => {
             totalQuantity = totalQuantity + cart.quantity;
@@ -110,32 +114,3 @@ const changeQuantity = (product_id, type) => {
     addCartToMemory(); //Update the memory to reflect the quantity change
     addCartToHTML(); //Make the quantity change visible on the cart page
 }
-
-// const addDataToHTML = () => { //Loads the products from the json file to the html page
-//     listProductHTML.innerHTML = '';
-//     if(listProducts.length > 0){
-//         listProducts.forEach(product => {
-//             let newProduct = document.createElement('div');
-//             newProduct.classList.add('item');
-//             newProduct.innerHTML = `
-//                 <img class="product-img" src="images/product8.jpg">
-//                 <img class="product-img hover-img" src="images/product8_alt.jpg">
-//                 <h3>Cat and Chick Mug</h3>
-//                 <p>An artistic mug featuring little kittens, perfect for any cat lover wishing to spruce up the kitchen and bring joy to their morning coffee.</p>
-//                 <div class="side-by-side-details">
-//                     <p class="creator">By Jen Designs</p>
-//                     <p class="price">R500.00</p>
-//                 </div>
-//                 <a class="button box-highlight" href="about.html"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</a>
-//             `;
-//             listProductHTML.appendChild(newProduct);
-//         })
-//     }
-// }
-
-
-
-
-
-
-
