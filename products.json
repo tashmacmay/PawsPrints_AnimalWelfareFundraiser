@@ -19,20 +19,32 @@
     },
     {
         "id": 4,
-        "name": "Bark Mug",
-        "price": 50,
+        "name": "Dog Tile Shirt",
+        "price": 150,
         "image": "images/product4.png"
     },
     {
         "id": 5,
-        "name": "Cat Paw Sticker Pack",
+        "name": "Dog Paw Sticker Pack",
         "price": 50,
         "image": "images/product5.png"
     },
     {
         "id": 6,
-        "name": "Dog Paw Sticker Pack",
+        "name": "Cat Paw Sticker Pack",
         "price": 50,
         "image": "images/product6.png"
+    },
+    {
+        "id": 7,
+        "name": "Kitten Cap",
+        "price": 150,
+        "image": "images/product7.png"
+    },
+    {
+        "id": 8,
+        "name": "Bark Mug",
+        "price": 50,
+        "image": "images/product8.png"
     }
 ]
