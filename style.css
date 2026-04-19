@@ -71,7 +71,7 @@ h1 {
     flex-direction: column;
     max-width: 20vi;
     position: relative; /*Allows content to be placed on top (absolute). See https://www.youtube.com/watch?v=nzxtEotE0YM*/
-    background-color: #ffda90;
+    background-color: rgb(243, 223, 187);
     border-radius: 25px;
     padding: 20px;
     h3, p {
@@ -141,9 +141,11 @@ h1 {
     border-radius: 50%;
     cursor: pointer;
     align-content: center;
+    color: #ffda90;
+    background-color: #E15E5E;
 }
 .cart-item:nth-child(even){
-    background-color: rgb(234, 192, 115);
+    background-color: rgb(243, 223, 187);
 }
 
 /*Elements*/
@@ -210,35 +212,16 @@ a { /*Navigation Links*/
     font-size: small;
 }
 
-/*W3Schools Drop down (navbar) tutorial adapted*/
-.dropdown {
-    display: inline-block;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.dropdown-content a {
-    color: #894728;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.button, .checkout, .submit{ /*For links of class button to make them appear like buttons aethetically*/
-    display: block; /*Learnt that <a> is in-line by default and therefore does not regognise margins, therefore set display to block https://forum.freecodecamp.org/t/why-margin-doesnt-work/346366*/
-    margin-top: 20px;
+.button, .checkout, .submit, .add-to-cart{ /*For links of class button to make them appear like buttons aethetically*/
+    
     padding: 10px;
     border-radius: 25px;
     max-width: fit-content;
+    border: none;
+    font-weight: bold;
+    min-width: 75px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 /*Page Sections*/
@@ -329,6 +312,7 @@ a { /*Navigation Links*/
         font-size: xx-large;
         font-weight: bold;
     }
+    margin-bottom: 50px;
 }
 
 .design-container{
