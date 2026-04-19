@@ -31,8 +31,7 @@ h1 {
         object-fit: cover; /*Fit the image to the donation page grid*/
         border-radius: 25px;
     }
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 50px;
     gap: 20px;
 }
 .forms-section {
@@ -49,7 +48,7 @@ h1 {
 
 .product-grid { /*Grid rather than flex so that card widths are adaptive - setup learnt from https://www.w3schools.com/css/css_grid.asp*/
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*Ensures all grid columns are the same width (even rows with less than 4 items) - learnt at: https://gomakethings.com/an-introduction-to-css-grid/*/
     gap: 20px;
 }
 .product-card {
@@ -66,10 +65,14 @@ h1 {
     .button {
         align-self: center;
     }
+    img {
+        background-color: white;
+    }
 }
 .product-card:hover {
     .hover-img {
         display: block; /*Reveal the hover-only view*/
+        background-color: white;
     }
 }
 .product-img {
@@ -263,6 +266,7 @@ a { /*Navigation Links*/
 }
 
 footer {
+    margin-top: 50px;
     min-height: 100px;
     display: flex;
     flex-direction: row;
