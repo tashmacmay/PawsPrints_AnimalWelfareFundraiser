@@ -55,6 +55,10 @@ h1 {
     padding: 20px;
     border-radius: 25px;
 }
+.form-heading {
+    margin-top: 10px;
+    font-weight: bold;
+}
 
 /*Product Page*/
 .product-grid { /*Grid rather than flex so that card widths are adaptive - setup learnt from https://www.w3schools.com/css/css_grid.asp*/
@@ -296,10 +300,41 @@ a { /*Navigation Links*/
 
 .page-header
 {
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #ffda90; 
-    height: 100px;
+    height: fit-content;
     justify-items: center;
     align-content: center;
+    text-align: center;
+    .page-title {
+        font-size: xxx-large;
+        font-weight: bold;
+    }
+}
+
+.design-container{
+    width: 100%; /*Fills half of the page - margins*/
+    aspect-ratio: 1/1; /*Ensures that the product images are pure squares*/
+    background-color: white;
+    position: relative;
+    
+}
+#design-template { /*Fills the container*/
+    width: 100%;
+    border: 1px solid black;
+    background-size: cover;
+}
+#design-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%); /*The transform method - found at: https://stackoverflow.com/questions/26318059/image-with-positionabsolute-not-centering-inside-parent-div-with-positionrelat by scooterlord*/
+    width: 40%;
+    height: 40%;
+    background-size: contain; /*No parts of the image (if not a square) are left out*/
+    background-repeat: no-repeat; /*Sometimes contain may repeat the image. I am avoiding this!*/
+    background-position: center; /*The no-repeat image may stand to the side now that not balanced by duplicates, so I centered it.*/
 }
 
 footer {

@@ -115,3 +115,21 @@ const changeQuantity = (product_id, type) => {
     addCartToMemory(); //Update the memory to reflect the quantity change
     addCartToHTML(); //Make the quantity change visible on the cart page
 }
+
+//Submit a Design - code taught by: https://www.youtube.com/watch?v=lzK8vM_wdoY&t=2s:
+const image_input = document.querySelector("#designFile"); //image_input constant is set to the id of our image upload
+var uploaded_image = ""; //variable for our uploaded image (specific image)
+
+image_input.addEventListener("change", function(){ //when image upload CHANGES do...
+    const reader = new FileReader(); //Object to "read" our upload
+    reader.addEventListener("load", () => {
+        uploaded_image = reader.result; //file read by reader and upload stored in uploaded_image variable
+        document.getElementById("design-hover").style.backgroundImage = `url(${uploaded_image})`;
+    })
+    reader.readAsDataURL(this.files[0]);
+})
+
+//Changing template backing based on radio button value (img src) - Sourced from https://stackoverflow.com/a/20220864 (Intensly edited)
+function CB(bg) {
+    document.getElementById("design-template").src = bg;
+}

@@ -36,7 +36,57 @@
     </header>
 
     <main>
-
+        <section class="page-header side-padding">
+            <div class="page-title">Submit a Design</div>
+            <div class="page-description">Submit you us your own print design for review. You very well may be our next featured designer! Take this step to funding Animal Welfare with us.</div>
+        </section>
+        <form>
+            <section class="half-grid side-margins">
+                <div>
+                    <div class="design-container">
+                        <img id="design-template">
+                        <div id="design-hover"></div>
+                    </div>
+                    <!--Upload the design file - learnt from: https://www.w3schools.com/howto/howto_html_file_upload_button.asp-->
+                    <input type="file" id="designFile" name="designFile" accept="image/png, image/jpg" required><br> <!--Accepted file types from: https://www.youtube.com/watch?v=lzK8vM_wdoY&t=2s-->
+                </div>
+                <div>
+                    <tr>
+                        <td><label for="designername">Designer Name:</label><br></td>
+                        <td><input type="text" id="designername" name="designername" required placeholder="e.g. John Smith"><br></td>
+                    </tr><br>
+                    <tr>
+                        <td><label for="designcontext">Design Details and Additional Information:</label><br></td>
+                        <td><textarea type="text" id="designcontext" name="designcontext" cols="45" rows="10" required placeholder="I was inspired by..."></textarea><br></td>
+                    </tr><br>
+                    <!--Specify design mockup template - learnt radio button input from: https://www.w3schools.com/html/html_forms.asp-->
+                    <label>Mockup Template</label><br>
+                    <tr>
+                        <td><input type="radio" id="none" name="mockup_template" value="images/empty.png" onClick="CB(this.value);" checked></td> <!--Checked by default - learnt from: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/radio-->
+                        <td><label for="none">Not Specified</label><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="sticker" name="mockup_template" value="images/sticker_template.png" onClick="CB(this.value);"></td>
+                        <td><label for="sticker">Sticker</label><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="mug" name="mockup_template" value="images/mug_template.png" onClick="CB(this.value);"></td>
+                        <td><label for="mug">Mug</label><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="shirt" name="mockup_template" value="images/shirt_template.png" onClick="CB(this.value);"></td>
+                        <td><label for="shirt">Shirt</label><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="cap" name="mockup_template" value="images/cap_template.png" onClick="CB(this.value);"></td>
+                        <td><label for="cap">Cap</label></td><br>
+                    </tr><br>
+                    <tr>
+                        <input type="submit" value="Submit">
+                    </tr>
+                </div>
+            </section>
+        </form>
     </main>
 
     <footer>
