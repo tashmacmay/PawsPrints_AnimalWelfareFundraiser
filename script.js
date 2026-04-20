@@ -75,6 +75,16 @@ const addCartToHTML = () => {
         })
     }
     //iconCartBadge.innerText = totalQuantity;
+    let totalPrice = cart.reduce((sum, cartItem) => { //totalPrice = the sum of each cart item's total price (price * quantity)
+        let positionProduct = listProducts.findIndex((value) => value.id == cartItem.product_id); //Copying code above to find product's position in the list to inport to the next line as "info"
+        let info = listProducts[positionProduct];
+        return sum + (info.price * cartItem.quantity); //++(price*quantity)
+    }, 0);
+
+    let priceDisplay = document.querySelector('.price'); //finding the .price class to update in html
+    if (priceDisplay) { //Only if price exists to avoid errors I come across while juggling the two market and cart pages
+        priceDisplay.innerText = `R${totalPrice.toFixed(2)}`; //the inner text eg. the html text is replaced | toFixed adds only the 2 decimals points for cents. see: https://www.w3schools.com/jsref/jsref_tofixed.asp
+    }
 }
 
 const addCartToMemory = () => {
